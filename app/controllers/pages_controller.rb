@@ -8,11 +8,8 @@ class PagesController < ApplicationController
   private
 
   def authorize_user
-    if current_user
-      @ME = current_user.email == User.first.email
-    else
-      @ME = false
-    end
+    @privileged = false
+    @privileged = current_user.privileged if current_user
   end
 
 
