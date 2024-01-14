@@ -1,0 +1,2 @@
+module EntitiesEventsHelper
+end

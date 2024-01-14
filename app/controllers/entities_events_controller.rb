@@ -1,0 +1,2 @@
+class EntitiesEventsController < ApplicationController
+end

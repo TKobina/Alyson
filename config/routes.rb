@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   get 'pages/index'
   
   resources :entities
-  #get 'entities', to: 'entities#index'
-  #get 'entities/index'
-  #get 'entities/:id', to: 'entities#show'
+  #resources :entities_events
+  #resources :events
   
 
 

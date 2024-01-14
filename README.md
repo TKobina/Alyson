@@ -21,6 +21,8 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 # Resources
 * https://guides.rubyonrails.org/getting_started.html
 * https://dev.to/kevinluo201/how-to-setup-very-basic-devise-in-rails-7-55ia
+* https://rachelaemmer.medium.com/building-a-many-to-many-relationship-in-rails-efeee50a23ad
+* https://emcorrales.com/blog/rails-setup-multiple-associations-same-model
 
 # Devise
 * $ rails g devise:views

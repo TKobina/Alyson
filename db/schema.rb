@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_14_000929) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_14_133004) do
   create_table "entities", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
@@ -20,6 +20,43 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_14_000929) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_entities_on_user_id"
+  end
+
+  create_table "entities_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.text "description"
+    t.integer "entities_id", null: false
+    t.integer "events_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entities_id"], name: "index_entities_events_on_entities_id"
+    t.index ["events_id"], name: "index_entities_events_on_events_id"
+    t.index ["user_id"], name: "index_entities_events_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.datetime "event_start"
+    t.datetime "event_end"
+    t.text "story"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.text "description"
+    t.integer "left_id", null: false
+    t.integer "right_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["left_id"], name: "index_relationships_on_left_id"
+    t.index ["right_id"], name: "index_relationships_on_right_id"
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,4 +72,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_14_000929) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entities_events", "entities", column: "entities_id"
+  add_foreign_key "entities_events", "events", column: "events_id"
 end
