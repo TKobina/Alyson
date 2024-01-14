@@ -7,6 +7,8 @@
   * password resets, confirmation e-mails, etc.
   * require strong passwords
   * https://bogotobogo.com/RubyOnRails/RubyOnRails_Devise_Authentication_Sending_Confirmation_Email.php
+  * How to stop non-privileged from accessing pages? Can easily restrict data, but....
+    * https://stackoverflow.com/questions/11230130/rails-routes-based-on-condition
   
 
 # Resources
