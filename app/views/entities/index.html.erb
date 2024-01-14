@@ -1,11 +1,14 @@
-<h1>People, Places, & Things, Oh My!</h1>
+<h1>Entities</h1>
+<h2>People, Places, & Things, Oh My!</h2>
 
 <ul>
   <% @entities.each do |e| %>
     <li>
+      <a href="/entities/<%= e.id %>">
       <%= e.name %>
     </li>
   <% end %>
 </ul>
 
+<%= link_to 'New Entity', new_entity_path %>
 </br><%= link_to 'Home', pages_path %>

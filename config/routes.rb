@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   get 'pages', to: 'pages#index'
   get 'pages/index'
   
-  get 'entities', to: 'entities#index'
-  get 'entities/index'
+  resources :entities
+  #get 'entities', to: 'entities#index'
+  #get 'entities/index'
+  #get 'entities/:id', to: 'entities#show'
   
 
 
