@@ -4,8 +4,22 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 # NOTES
 ## Seeding
 ### Mock Data
-* I created a mock_users.rb seeding file, that is run by seed_mock.rake, with my own e-mails for testing
-  * rails db:seed_mock
+* Use SeederClass and seed_mock.rake to generate mock data
+  * Prerequisites:
+    * Faker gem
+    * Storing gmail account for testing and a password in the application credentials
+      * Using credentials.yml.enc to store a base gmail account for testing
+        * rails credentials:edit
+        * add line with the base "username" (everything before the @gmail.com): 
+          * mock_seeding_email: "testemail"
+          * Accessible by Rails.application.credentials.mock_seeding_email
+        * add line with the mock password:
+          * mock_password: "TestPassword"
+          * * Accessible by Rails.application.credentials.mock_password
+  * Set options (like the number of mock users to generate, etc.) in the rake file
+  * Commands
+    * rails db:seed_mock
+    * rails db:unseed_mock
 
 # TO DO
 * ~~~Rough-in: Events: Controller & Views~~~
@@ -23,6 +37,7 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * Add to seeding
 * Add: Contact Methods
 * Extend: Entities
+  * Type
   * Contact information
   * Birthday
 * Devise
