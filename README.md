@@ -1,15 +1,26 @@
 # README
 I spent a while attempting to host MonicaHQ on my personal machine, unsuccessfully; ultimately, I decided this was a project that it would be worth my time to build myself, as there were a number of features in MonicaHQ that I didn't care about, and there are a number of features I want that didn't exist there, and I need to be spending more time in code.
 
-# To Do
-* Rough-in: Events: Controller & Views
+# NOTES
+## Seeding
+### Mock Data
+* I created a mock_users.rb seeding file, that is run by seed_mock.rake, with my own e-mails for testing
+  * rails db:seed_mock
+
+# TO DO
+* ~~~Rough-in: Events: Controller & Views~~~
 * Add: Seed!
+  * ~~~check that mock data isn't uploaded to github~~~
+  * populate mock_data_example.yml
+  * add unseeed_mock.rake
 * Add: flash for attempting to access record of different user?
   * send to 404?
   * Or, if attempting to access id that doesn't exist, flash and redirect to events/entities_path?
 * Extend: all New/Edit views: add cancel button to form
 * Rough-in: EntitiesEvents
+  * Add to seeding
 * Rough-in: Relationships
+  * Add to seeding
 * Add: Contact Methods
 * Extend: Entities
   * Contact information
@@ -27,16 +38,15 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
     * ~~~before_show: check that current_user has access to that id~~~
 * Refactoring
   * abstract: check_ownership into a concern?
+* Task: Deleted Users:
+  * How do we handle if a user is deleted? Create a task that searches for orphans and destroys them?
+  * Delete all records belonging to that user?
+  * Not sure that's currently happening, and it probably should
 * Development => Production
   * MongoDB?
   
 
-# Resources
-* https://guides.rubyonrails.org/getting_started.html
-* https://dev.to/kevinluo201/how-to-setup-very-basic-devise-in-rails-7-55ia
-* https://rachelaemmer.medium.com/building-a-many-to-many-relationship-in-rails-efeee50a23ad
-* https://emcorrales.com/blog/rails-setup-multiple-associations-same-model
-
+# NOTES FOR MYSELF
 # Devise
 * $ rails g devise:views
 * configuring
@@ -47,3 +57,9 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * user_signed_in?
   * current_user
   * user_session
+
+# Resources
+* https://guides.rubyonrails.org/getting_started.html
+* https://dev.to/kevinluo201/how-to-setup-very-basic-devise-in-rails-7-55ia
+* https://rachelaemmer.medium.com/building-a-many-to-many-relationship-in-rails-efeee50a23ad
+* https://emcorrales.com/blog/rails-setup-multiple-associations-same-model
