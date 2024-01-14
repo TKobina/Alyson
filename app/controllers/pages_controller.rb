@@ -11,6 +11,4 @@ class PagesController < ApplicationController
     @privileged = false
     @privileged = current_user.privileged if current_user
   end
-
-
 end
