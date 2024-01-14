@@ -5,7 +5,7 @@ class EntitiesController < ApplicationController
   def index
     @entities = Entity.all.select { |x| x.user_id == current_user.id }
   end
-
+  
   def show
   end
 
@@ -47,8 +47,12 @@ class EntitiesController < ApplicationController
   end
   
   def check_ownership
-    @entity = Entity.find(params[:id])
-    redirect_to entities_path and return unless @entity.user_id == current_user.id
+    begin
+      @entity = Entity.find(params[:id])
+      redirect_to entities_path and return unless @entity.user_id == current_user.id
+    rescue
+      redirect_to '/404'
+    end
   end
   
   def authorize_user
