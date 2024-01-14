@@ -1,0 +1,8 @@
+
+
+<h1><%= @event.name %></h1>
+<p><%= @event.story %></p>
+
+</br><%= link_to 'Edit', edit_event_path(@event) %>
+</br><%= link_to 'Delete', event_path(@event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</br><%= link_to 'Return to Events List', events_path %>

@@ -3,6 +3,11 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 
 # To Do
 * Rough-in: Events: Controller & Views
+* Add: Seed!
+* Add: flash for attempting to access record of different user?
+  * send to 404?
+  * Or, if attempting to access id that doesn't exist, flash and redirect to events/entities_path?
+* Extend: all New/Edit views: add cancel button to form
 * Rough-in: EntitiesEvents
 * Rough-in: Relationships
 * Add: Contact Methods
