@@ -7,7 +7,8 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 * Use SeederClass and seed_mock.rake to generate mock data
   * Prerequisites:
     * Faker gem
-    * Storing gmail account for testing and a password in the application credentials
+    * Devise gem
+    * Gmail account for testing & a test password in the application credentials
       * Using credentials.yml.enc to store a base gmail account for testing
         * rails credentials:edit
         * add line with the base "username" (everything before the @gmail.com): 
@@ -22,11 +23,11 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
     * rails db:unseed_mock
 
 # TO DO
-* ~~~Rough-in: Events: Controller & Views~~~
+* ~~Rough-in: Events: Controller & Views~~
 * Add: Seed!
-  * ~~~check that mock data isn't uploaded to github~~~
-  * populate mock_data_example.yml
-  * add unseeed_mock.rake
+  * ~~check that mock data isn't uploaded to github~~
+  * ~~populate mock_data_example.yml~~
+  * ~~add unseeed_mock.rake~~
 * Add: flash for attempting to access record of different user?
   * send to 404?
   * Or, if attempting to access id that doesn't exist, flash and redirect to events/entities_path?
@@ -38,8 +39,11 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 * Add: Contact Methods
 * Extend: Entities
   * Type
+    * Person
+    * Location
   * Contact information
-  * Birthday
+  * Dates/Birthday
+* Extend: Events
 * Devise
   * https://medium.com/@learnwithalfred/rails-7-authentication-with-devise-gem-add-custom-fields-a633982bef58
     * look into all this
@@ -78,6 +82,7 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
 * Devise
   * https://dev.to/kevinluo201/how-to-setup-very-basic-devise-in-rails-7-55ia
 * DB & ActiveRecord stuff
+  * https://reintech.io/blog/how-to-add-and-remove-columns-from-a-database-in-rails
   * https://rachelaemmer.medium.com/building-a-many-to-many-relationship-in-rails-efeee50a23ad
   * https://emcorrales.com/blog/rails-setup-multiple-associations-same-model
 * Rake Tasks
