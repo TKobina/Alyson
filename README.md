@@ -63,6 +63,7 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * Not sure that's currently happening, and it probably should
 * Development => Production
   * MongoDB?
+* Buttons and links, uh
   
 
 # NOTES FOR MYSELF
@@ -87,3 +88,5 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * https://emcorrales.com/blog/rails-setup-multiple-associations-same-model
 * Rake Tasks
   * https://medium.com/geekculture/writing-custom-rake-tasks-f656f43336cc
+* Forms & Buttons & Links
+  * https://dev.to/konnorrogers/escaping-the-traditional-rails-form-4c4o

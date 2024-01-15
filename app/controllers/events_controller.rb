@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event
     else
-      render :new, status: :unprocessable_event
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event
     else
-      render :edit, status: :unprocessable_event
+      render :edit, status: :unprocessable_entity
     end
   end
 

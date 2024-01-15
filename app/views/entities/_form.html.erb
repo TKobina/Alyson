@@ -2,13 +2,19 @@
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
+    <% @entity.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
-
+<hr align="left" width="40%">
   <div>
     <%= form.label :about %><br>
     <%= form.text_area :about %>
+    <% @entity.errors.full_messages_for(:about).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
-
+<hr align="left" width="40%">
   <div>
     <%= form.submit %>
   </div>

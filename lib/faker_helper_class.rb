@@ -29,7 +29,7 @@ class FakerHelperClass
   end
 
   def generate_event_text
-    case rand(6)
+    case rand(8)
     when 0
       Faker::ChuckNorris.fact
     when 1
@@ -42,7 +42,7 @@ class FakerHelperClass
       Faker::Restaurant.description 
     when 5
       Faker::Restaurant.review 
-    when 6
+    when 6..8
       Faker::String.random(length: 12..30)
     end
   end

@@ -1,14 +1,20 @@
 <%= form_with model: @event do |form| %>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name %><br>
+    <% @event.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
-
+<hr align="left" width="40%">
   <div>
     <%= form.label :story %><br>
-    <%= form.text_area :story %>
+    <%= form.text_area :story %><br>
+    <% @event.errors.full_messages_for(:story).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
-
+<hr align="left" width="40%">
   <div>
     <%= form.submit %>
   </div>
