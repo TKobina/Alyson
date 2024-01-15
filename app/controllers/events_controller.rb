@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-  #before_action :authorize_user
-  before_action :check_ownership, only: [:show, :edit, :update, :destroy]
+  include AuthorizationConcern
 
   def index
     @events = Event.all.select { |x| x.user_id == current_user.id }
@@ -41,23 +40,15 @@ class EventsController < ApplicationController
   end
 
   private
+  def get_record
+    @event = Entity.find(params[:id])
+    check_ownership(@event)
+  end
 
   def event_params
     params.require(:event).permit(:name, :story)
   end
   
-  def check_ownership
-    begin
-      @event = Event.find(params[:id])
-      redirect_to events_path and return unless @event.user_id == current_user.id
-    rescue
-      redirect_to '/404'
-    end
-  end
-  
-  def authorize_user
-    @privileged = false
-    @privileged = current_user.privileged if current_user
-  end
+
 end
 

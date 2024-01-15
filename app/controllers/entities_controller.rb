@@ -1,6 +1,6 @@
 class EntitiesController < ApplicationController
-  #before_action :authorize_user
-  before_action :check_ownership, only: [:show, :edit, :update, :destroy]
+  include AuthorizationConcern
+
 
   def index
     @entities = Entity.all.select { |x| x.user_id == current_user.id }
@@ -42,21 +42,13 @@ class EntitiesController < ApplicationController
 
   private
 
+  def get_record
+    @entity = Entity.find(params[:id])
+    check_ownership(@entity)
+  end
+
   def entity_params
     params.require(:entity).permit(:name, :about)
   end
-  
-  def check_ownership
-    begin
-      @entity = Entity.find(params[:id])
-      redirect_to entities_path and return unless @entity.user_id == current_user.id
-    rescue
-      redirect_to '/404'
-    end
-  end
-  
-  def authorize_user
-    @privileged = false
-    @privileged = current_user.privileged if current_user
-  end
+
 end

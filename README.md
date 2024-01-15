@@ -23,6 +23,7 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
     * rails db:unseed_mock
 
 # TO DO
+## General
 * ~~Rough-in: Events: Controller & Views~~
 * Add: Seed!
   * ~~check that mock data isn't uploaded to github~~
@@ -44,6 +45,16 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * Contact information
   * Dates/Birthday
 * Extend: Events
+* Refactoring
+  * abstract: check_ownership into a concern?
+* Task: Deleted Users:
+  * How do we handle if a user is deleted? Create a task that searches for orphans and destroys them?
+  * Delete all records belonging to that user?
+  * Not sure that's currently happening, and it probably should
+* Development => Production
+  * MongoDB?
+* Buttons and links, uh
+* ## Devise/Authentication
 * Devise
   * https://medium.com/@learnwithalfred/rails-7-authentication-with-devise-gem-add-custom-fields-a633982bef58
     * look into all this
@@ -55,16 +66,9 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
     * ??encrypt id's?? Do we care if id's of records are exposed??
   * Entitities Controller:
     * ~~~before_show: check that current_user has access to that id~~~
-* Refactoring
-  * abstract: check_ownership into a concern?
-* Task: Deleted Users:
-  * How do we handle if a user is deleted? Create a task that searches for orphans and destroys them?
-  * Delete all records belonging to that user?
-  * Not sure that's currently happening, and it probably should
-* Development => Production
-  * MongoDB?
-* Buttons and links, uh
-  
+## Error Handling
+* NoMethodError in EventsController#index
+  * when not logged in and attempt to access a page that requires a user be privileged....
 
 # NOTES FOR MYSELF
 # Devise
