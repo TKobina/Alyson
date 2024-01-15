@@ -8,11 +8,12 @@ module AuthorizationConcern
   end
 
   private
+  def check_privilege
+    redirect_to root_path unless current_user and current_user.privileged
+  end
+  
   def check_ownership(record)
     redirect_to '/404' unless record.user_id == current_user.id
   end
   
-  def check_privilege
-    redirect_to root_path unless current_user and current_user.privileged
-  end
 end

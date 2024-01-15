@@ -46,11 +46,7 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * Dates/Birthday
 * Extend: Events
 * Refactoring
-  * abstract: check_ownership into a concern?
-* Task: Deleted Users:
-  * How do we handle if a user is deleted? Create a task that searches for orphans and destroys them?
-  * Delete all records belonging to that user?
-  * Not sure that's currently happening, and it probably should
+  * ~~abstract: check_ownership into a concern?~~
 * Development => Production
   * MongoDB?
 * Buttons and links, uh
@@ -64,8 +60,9 @@ I spent a while attempting to host MonicaHQ on my personal machine, unsuccessful
   * How to stop non-privileged from accessing pages? Can easily restrict data, but....
     * https://stackoverflow.com/questions/11230130/rails-routes-based-on-condition
     * ??encrypt id's?? Do we care if id's of records are exposed??
-  * Entitities Controller:
-    * ~~~before_show: check that current_user has access to that id~~~
+* Deletion of accounts
+  * Should probably add this functionality
+  * Make sure to delete records belonging to that user
 ## Error Handling
 * NoMethodError in EventsController#index
   * when not logged in and attempt to access a page that requires a user be privileged....

@@ -1,7 +1,6 @@
 class EntitiesController < ApplicationController
   include AuthorizationConcern
 
-
   def index
     @entities = Entity.all.select { |x| x.user_id == current_user.id }
   end

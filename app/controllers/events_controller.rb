@@ -40,6 +40,7 @@ class EventsController < ApplicationController
   end
 
   private
+  
   def get_record
     @event = Entity.find(params[:id])
     check_ownership(@event)
@@ -48,7 +49,6 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :story)
   end
-  
 
 end
 
